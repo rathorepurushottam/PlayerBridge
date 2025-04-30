@@ -8,11 +8,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   AUTHSTACK,
   AUTH_LOADING_SCREEN,
+  Intro_Screen,
   LOGIN,
 } from "./routes";
 import NavigationService from "./NavigationService";
 import AuthLoading from "../screens/AuthLoading";
 import Login from "../screens/Login";
+import IntroScreen from "../screens/introScreen/IntroScreen";
 
 const Stack = createNativeStackNavigator();
 // const Drawer = createDrawerNavigator();
@@ -59,7 +61,9 @@ const AuthStack = () => {
         headerShown: false,
       }}
     >
+      <Stack.Screen name={Intro_Screen} component={IntroScreen} />
       <Stack.Screen name={LOGIN} component={Login} />
+
     </Stack.Navigator>
   );
 };
